@@ -2,7 +2,7 @@
 using namespace std;
 int main() {
   char charA = 'A';
-  char charB = 66;
+  char charB = 'B';
   int intNumber = 98;
   float floatNumber = 4.05;
 
