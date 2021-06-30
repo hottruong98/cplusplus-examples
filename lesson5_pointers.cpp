@@ -19,9 +19,7 @@ int main() {
   *buffer = 6;
   
   char** ptr = &buffer; //pointer to pointer
-  if(*buffer >= 1) {
 
-  }
   delete[] buffer;
   std::cin.get();
   return 0;
