@@ -4,7 +4,7 @@ int main() {
   char charA = 'A';
   char charB = 'B';
   int intNumber = 98;
-  float floatNumber = 4.05;
+  float floatNumber = 6.7;
 
   //The size of datatype
   cout<<"sizeof(char) = "<<sizeof(char)<<"\n";
