@@ -3,7 +3,7 @@ using namespace std;
 int main() {
   char charA = 'A';
   char charB = 'B';
-  int intNumber = 98;
+  int intNumber = 6;
   float floatNumber = 4.05;
 
   //The size of datatype
