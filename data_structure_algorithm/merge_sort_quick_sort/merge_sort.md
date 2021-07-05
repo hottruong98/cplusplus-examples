@@ -1,4 +1,4 @@
-divide the array into 2 parts, treat with each one (recursion) and then merge both of parts
+# divide the array into 2 parts, treat with each one (recursion) and then merge both of parts
 
 void mergeArrays(int x[],int y[],int a[],int s,int e){
        int mid = (s+e)/2;
@@ -50,7 +50,7 @@ int main(){
   mergeSort(a,0,6);
 
   for(int i=0;i<7;i++){
-    cout<<a[i]<<" ";
+    cout<<a[i]<<"\n";
   }
   return 0;
 }
