@@ -1,4 +1,4 @@
-// Inserting a head (reversing a linked list: keeping tail and moving head)
+// Inserting at HEAD (reversing a linked list: fixing the tail and moving the head node)
 // Input: 1 2 3 4 ==> Output: 4->3->->2->1->NULL
 #include <iostream>
 using namespace std;
@@ -39,7 +39,7 @@ Node* takeInput() {
     return head;
 }
 int main() {
-    Node* head = takeInput();
+    Node* head = takeInput(); // T = O(N)
     printLinkedList(head);
     return 0;
 }
