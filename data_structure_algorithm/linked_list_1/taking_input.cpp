@@ -39,7 +39,7 @@ Node* takeInput() {
             tail = n;
         }
         else {
-            tail->next = n; // Insert a tail
+            tail->next = n; // Insert at tail = Tail will move on while Head is fixed
             tail = n; // Set current node as the tail
         }
         cin>>data;
@@ -59,4 +59,4 @@ int main()
 // Create N nodes --> N.k steps
 // So, T = O(N)
 
-// The next code will be about inserting a head --> the same as inserting a tail in this example
+// The next code will be about inserting at head -> minus change
