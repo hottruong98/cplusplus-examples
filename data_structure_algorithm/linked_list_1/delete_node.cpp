@@ -46,7 +46,8 @@ Node* deleteNode(Node* head, int pos) {
     if(pos == 0) {
         Node* newHead = head->next;
         head->next = nullptr;
-        delete head; // head was created dynamically ==> we need to deallocate it
+        delete head; // head was created dynamically 
+                     // ==> we need to deallocate dynamic memory block that it's pointing to
         return newHead;
     }
     Node* temp = head;
@@ -60,7 +61,7 @@ Node* deleteNode(Node* head, int pos) {
         temp->next = oldNode->next; // node[pos-1] points to node[pos+1] 
                                     // or the link between node[pos-1] and node[pos] has been destroyed
         oldNode->next = nullptr;
-        delete oldNode;
+        delete oldNode; // deallocating dynamic memory block that oldNode's pointing to
         return head;
     }
     return head;
