@@ -1,5 +1,6 @@
 // Because we create nodes dynamically ==> delete it = deallocate it's dynamic memory block ==> avoid memory leak problem
-// Before deleting a node, assign NULL value to the "next" attribute
+// Before deleting a node, we must assign NULL value to "next" attribute first or the memory ...
+// ... allocated to the next one will be destroyed b/c "next" of current node stores the next node.
 #include <iostream>
 using namespace std;
 
@@ -43,16 +44,16 @@ Node* deleteNode(Node* head, int pos) {
     if(pos < 0) {
         return head;
     }
-    if(pos == 0) {
+    if(pos == 0 && head != nullptr) { // if head is null, head->next will cause runtime error
         Node* newHead = head->next;
-        head->next = nullptr;
+        head->next = nullptr; // isolate the old head
         delete head; // head was created dynamically 
                      // ==> we need to deallocate dynamic memory block that it's pointing to
         return newHead;
     }
     Node* temp = head;
     int count = 1;
-    while(temp != nullptr && count <= pos-1) {
+    while(temp != nullptr && count <= pos-1) { // jump toward the node before one we want to delete
         temp = temp->next; // from node[1] to node[pos-1] if temp != null
         count++;
     }
@@ -60,7 +61,7 @@ Node* deleteNode(Node* head, int pos) {
         Node* oldNode = temp->next; // this node[pos] need to be deleted
         temp->next = oldNode->next; // node[pos-1] points to node[pos+1] 
                                     // or the link between node[pos-1] and node[pos] has been destroyed
-        oldNode->next = nullptr;
+        oldNode->next = nullptr; // isolate the node
         delete oldNode; // deallocating dynamic memory block that oldNode's pointing to
         return head;
     }
@@ -78,3 +79,6 @@ int main() {
     printLinkedList(head);
     return 0;
 }
+
+// Discuss about the time complexity of deleteNode function:
+// T = O(pos) --> O(N) (based on the wile loop)
