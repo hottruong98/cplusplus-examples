@@ -43,7 +43,7 @@ Assuming that $f(n) = O(n^k)$, then:
 > - **Case 1:** 
 > $k < \log_{b}a \Rightarrow n^k \ll n^{\log_{b}a}$, then $T(n) = O(n^{\log_{b}a})$
 > 
-> - **Case 2:** $k \approxeq \log_{b}a \Rightarrow n^k \approxeq n^{\log_{b}a}$, then $T(n) = O(n^{\log_{b}a}log_{}n)$
+> - **Case 2:** $k = \log_{b}a \Rightarrow n^k = n^{\log_{b}a}$, then $T(n) = O(n^{\log_{b}a}log_{}n)$
 > 
 > - **Case 3:** $k > \log_{b}a \Rightarrow n^k \gg n^{log_{b}a}$, then $T(n) = O(n^k)$
 
