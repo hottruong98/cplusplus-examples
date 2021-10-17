@@ -13,3 +13,5 @@
 */CMakeFiles/*
 *.cmake
 CMakeCache.txt
+#Ignore .exe
+*.exe*
